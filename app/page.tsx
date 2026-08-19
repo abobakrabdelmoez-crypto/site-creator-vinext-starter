@@ -24,7 +24,7 @@ const imageSet = {
   coast: "https://images.unsplash.com/photo-1615399144021-822ba908c6f3?auto=format&fit=crop&w=2400&q=85",
   people: "https://images.pexels.com/photos/37357096/pexels-photo-37357096.jpeg?auto=compress&cs=tinysrgb&w=2400",
 };
-const officialLogo = "https://canarytraveloman.com/wp-content/uploads/2019/12/11121Canary-final-logo.jpg";
+const officialLogo = "/canary-logo-fr.png";
 
 const initialAnswers: BuilderAnswers = { company: "", month: "", duration: "", experiences: [], rhythm: "", explore: "", comfort: "", notes: "", firstName: "", whatsapp: "", email: "" };
 const experiences = [
@@ -39,7 +39,7 @@ const experiences = [
 const routeStops = ["Mascate", "Wadi Shab", "Nizwa", "Jebel Akhdar", "Wahiba Sands", "La côte", "Mascate"];
 
 function BrandMark({ inverse = false }: { inverse?: boolean }) {
-  return <a className={inverse ? "brand-mark brand-mark-inverse" : "brand-mark"} href="#top" aria-label="Canary International Travel & Tourism, accueil"><img className="brand-image" src={officialLogo} alt="Canary International Travel & Tourism" /></a>;
+  return <a className={inverse ? "brand-mark brand-mark-inverse" : "brand-mark"} href="#top" aria-label="Canary Voyages et Tourisme, accueil"><img className="brand-image" src={officialLogo} alt="Canary Voyages et Tourisme" /></a>;
 }
 
 function ArrowIcon() { return <span aria-hidden="true" className="arrow-icon">↗</span>; }
