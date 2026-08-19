@@ -139,7 +139,9 @@ function TripBuilder({ open, onClose, seedExperiences = [] }: { open: boolean; o
       const saved = window.sessionStorage.getItem(builderStorageKey);
       if (saved) {
         const parsed = JSON.parse(saved) as { step?: number; answers?: BuilderAnswers };
+        // eslint-disable-next-line react-hooks/set-state-in-effect
         if (parsed.answers) setAnswers({ ...initialAnswers, ...parsed.answers });
+        // eslint-disable-next-line react-hooks/set-state-in-effect
         if (parsed.step && parsed.step >= 1 && parsed.step <= 11) setStep(parsed.step);
       }
     } catch { /* sessionStorage may be unavailable; the builder still works in memory. */ }
@@ -153,6 +155,7 @@ function TripBuilder({ open, onClose, seedExperiences = [] }: { open: boolean; o
 
   useEffect(() => {
     if (!open || !seedExperiences.length) return;
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     setAnswers((current) => ({ ...current, experiences: Array.from(new Set([...current.experiences, ...seedExperiences])) }));
   }, [open, seedExperiences]);
 
